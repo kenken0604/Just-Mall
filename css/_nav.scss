@@ -1,0 +1,194 @@
+$text-color-white: white;
+$text-color-black: black;
+
+@mixin flexCenter($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin image($repeat, $position, $cover) {
+  background-repeat: $repeat;
+  background-position: $position;
+  background-size: $cover;
+}
+
+.nav {
+  width: 100%;
+  height: 100px;
+  background-image: url(../image/upper/nav_bg.jpg);
+  // padding: 0 2vw;
+  @include image(no-repeat, center center, cover);
+  .nav-list {
+    @include flexCenter(row, space-between, center);
+    height: 100%;
+    padding: 0 60px;
+    list-style-type: none;
+    li {
+      text-align: center;
+      line-height: 100px;
+      height: 100%;
+      margin: 0 1.5vw;
+      cursor: pointer;
+    }
+    .nav-logo {
+      width: 150px;
+    }
+  }
+  .dropdown-list {
+    position: absolute;
+    width: 100%;
+    height: 40vw;
+    top: 140px;
+    left: 0;
+    z-index: 1;
+    .dropdown {
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      margin: 0 auto;
+      padding: 5vw 10vw;
+      display: none;
+      border-bottom: transparent solid 5px !important;
+      .category {
+        width: 100%;
+        height: 250px;
+        .category-list {
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          .category-group {
+            margin: 0 50px;
+            font-weight: bolder;
+            font-size: 16px;
+            color: black !important;
+            ul {
+              width: 100px;
+              padding-top: 5px;
+              border-top: lightgray solid 1px;
+              list-style-type: none;
+              padding-left: 0;
+              li {
+                margin-top: 12px;
+                font-weight: normal;
+                font-size: 14px;
+                color: grey;
+                &:hover {
+                  color: rgb(50, 50, 50);
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+      }
+      .deco {
+        display: flex;
+        justify-content: flex-start;
+        .deco-pic1 {
+          position: absolute;
+          top: 50px;
+          left: 408px;
+          box-shadow: 2px 2px 5px 0px dimgray;
+        }
+        .deco-pic2 {
+          position: absolute;
+          top: 50px;
+          left: 609px;
+          box-shadow: 2px 2px 5px 0px dimgray;
+        }
+        .deco-pic3 {
+          position: absolute;
+          top: 50px;
+          left: 809px;
+          box-shadow: 2px 2px 5px 0px dimgray;
+        }
+        .deco-pic4 {
+          position: absolute;
+          top: 50px;
+          left: 1009px;
+          box-shadow: 2px 2px 5px 0px dimgray;
+        }
+      }
+      .brand {
+        width: 100%;
+        height: 150px;
+        padding: 7px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: relative;
+        p {
+          font-size: 12px;
+          position: absolute;
+          bottom: -25px;
+          right: 0;
+        }
+        img {
+          width: 140px;
+          height: 120px;
+        }
+      }
+      .mb-bg {
+        background: linear-gradient(155deg, darksalmon 80%, tomato 80%);
+      }
+      .cb-bg {
+        background: linear-gradient(155deg, mediumturquoise 80%, teal 80%);
+      }
+      .jb-bg {
+        background: linear-gradient(155deg, orchid 80%, darkorchid 80%);
+      }
+      .lb-bg {
+        background: linear-gradient(
+          155deg,
+          mediumaquamarine 80%,
+          mediumseagreen 80%
+        );
+      }
+      .fb-bg {
+        background: linear-gradient(155deg, orange 80%, darkorange 80%);
+      }
+      .tb-bg {
+        background: linear-gradient(155deg, steelblue 80%, mediumblue 80%);
+      }
+      .ib-bg {
+        background: linear-gradient(155deg, skyblue 80%, dodgerblue 80%);
+      }
+      .sb-bg {
+        background: linear-gradient(155deg, plum 80%, violet 80%);
+      }
+    }
+  }
+}
+
+@media (max-width: 1150px) {
+  .nav-list {
+    li {
+      font-size: 12px;
+    }
+  }
+  .deco {
+    display: none !important;
+  }
+  .brand {
+    display: none !important;
+  }
+}
+
+@media (max-width: 880px) {
+  .nav-logo {
+    display: none;
+  }
+}
+
+@media (max-width: 710px) {
+  .nav-logo {
+    display: block !important;
+    margin: 0 auto;
+  }
+  .nav-item1,
+  .nav-item2 {
+    display: none;
+  }
+}

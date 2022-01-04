@@ -1,0 +1,296 @@
+$text-color-white: white;
+$text-color-black: black;
+$text-onsale: crimson;
+$text-original: darkgray;
+
+@mixin flexCenter($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin image($repeat, $position, $cover) {
+  background-repeat: $repeat;
+  background-position: $position;
+  background-size: $cover;
+}
+
+.ad2 {
+  width: 100%;
+  margin-top: 40px;
+  margin-left: 10px;
+  background-color: slateblue;
+  opacity: 0.9;
+  float: right;
+  background-image: url(../image/banner/3.jpg);
+  background-size: contain;
+}
+
+.area2 {
+  width: 100%;
+  height: 25vw;
+  min-height: 310px;
+  margin-top: 13px;
+  background-color: #fff;
+  float: right;
+  padding: 10px;
+  display: flex;
+  box-shadow: 1px 1px 5px 0px rgb(100, 100, 100);
+  border-radius: 5px;
+  .area2-left {
+    width: 55%;
+    display: flex;
+    .left1 {
+      width: 25%;
+      background-color: #fff;
+      .area2-name {
+        width: 100%;
+        p {
+          text-align: center;
+          font-size: 20px;
+          font-weight: bolder;
+          letter-spacing: 5px;
+          line-height: 52.5px;
+          color: white;
+        }
+      }
+      .fb-bg {
+        background: linear-gradient(155deg, orange 80%, darkorange 80%);
+      }
+      .tb-bg {
+        background: linear-gradient(155deg, steelblue 80%, mediumblue 80%);
+      }
+      .ib-bg {
+        background: linear-gradient(155deg, skyblue 80%, dodgerblue 80%);
+      }
+      .sb-bg {
+        background: linear-gradient(155deg, plum 80%, violet 80%);
+      }
+      .area-cate {
+        height: 84%;
+        text-align: center;
+        letter-spacing: 5px;
+        line-height: 52.5px;
+        p {
+          margin: 0 auto;
+          position: relative;
+          //   width: 137px;
+          &:hover {
+            color: gray;
+            &::after {
+              transform: scaleX(1);
+              transform-origin: left;
+              transition-duration: 1s;
+              transition-property: transform;
+              transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+              transition-delay: 0s;
+            }
+          }
+          &::after {
+            content: '';
+            background-color: gray;
+            width: 100%;
+            height: 1px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transform: scaleX(0);
+          }
+        }
+      }
+    }
+    .ader {
+      width: 40%;
+      height: 100%;
+      background-color: khaki;
+      img {
+        object-fit: cover;
+      }
+    }
+    .showpiece1 {
+      width: 35%;
+      border-right: silver solid 1px;
+      padding: 0 10px;
+      text-align: center;
+      line-height: 30px;
+      cursor: pointer;
+      s {
+        color: gray;
+        font-size: 14px;
+      }
+      i {
+        color: crimson;
+        font-size: 22px;
+        font-weight: bolder;
+      }
+    }
+  }
+  .area2-right {
+    width: 45%;
+    padding-left: 10px;
+    .r2-up {
+      width: 100%;
+      height: 70%;
+      display: flex;
+      border-bottom: silver solid 1px;
+      padding-bottom: 10px;
+      .up-item {
+        width: 33.3%;
+        height: 100%;
+        padding: 0px 5px;
+        margin-bottom: 10px;
+        text-align: center;
+        line-height: 27px;
+        cursor: pointer;
+        &:first-of-type {
+          border-right: lightgray solid 1px;
+        }
+        &:nth-of-type(2) {
+          border-right: lightgray solid 1px;
+        }
+        img {
+          width: 75%;
+          margin: 0 auto 5px auto;
+        }
+        s {
+          color: gray;
+          font-size: 12px;
+        }
+        i {
+          color: crimson;
+          font-size: 18px;
+          font-weight: bolder;
+        }
+        span {
+          font-weight: bolder;
+          font-size: 14px;
+        }
+      }
+    }
+    .r2-down {
+      width: 100%;
+      height: 30%;
+      padding-top: 10px;
+      display: flex;
+      .down-item {
+        width: 50%;
+        height: 90%;
+        padding-left: 20px;
+        text-align: left;
+        line-height: 29px;
+        cursor: pointer;
+        &:first-of-type {
+          border-right: lightgray solid 1px;
+        }
+        img {
+          height: 100%;
+          float: left;
+          margin-right: 10px;
+        }
+        p {
+          font-size: 14px;
+        }
+        s {
+          color: gray;
+          font-size: 12px;
+        }
+        i {
+          color: crimson;
+          font-weight: bolder;
+          font-size: 18px;
+        }
+        span {
+          font-weight: bolder;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+  .area2-left {
+    width: 40% !important;
+    .left1 {
+      width: 40% !important;
+    }
+    .ader {
+      width: 60% !important;
+      img {
+        height: 100%;
+      }
+    }
+    .showpiece1 {
+      width: 0 !important;
+      display: none;
+    }
+  }
+  .area2-right {
+    width: 60% !important;
+    .r2-up {
+      height: 100% !important;
+      .up-item {
+        p {
+          font-size: 16px !important;
+        }
+        img {
+          width: 95% !important;
+        }
+        i {
+          text-align: center !important;
+          display: block;
+        }
+      }
+    }
+    .r2-down {
+      height: 0 !important;
+      display: none !important;
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  .area2-name {
+    p {
+      font-size: 1.8vw !important;
+      line-height: 45px !important;
+    }
+  }
+  .area-cate {
+    font-size: 1.5vw;
+  }
+}
+
+@media (max-width: 650px) {
+  .area2-left {
+    width: 60% !important;
+    .area-cate {
+      width: 100% !important;
+    }
+    .area2-name p {
+      letter-spacing: 5px !important;
+    }
+    .showpiece1 {
+      width: 0 !important;
+      display: none !important;
+    }
+    .ader {
+      width: 60% !important;
+    }
+  }
+  .area2-right {
+    width: 40% !important;
+    .r2-up {
+      .up-item {
+        width: 100% !important;
+        img {
+          width: 90% !important;
+        }
+      }
+      .br {
+        display: none;
+      }
+    }
+  }
+}

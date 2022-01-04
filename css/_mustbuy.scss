@@ -1,0 +1,131 @@
+$text-color-white: white;
+$text-color-black: black;
+$text-onsale: crimson;
+$text-original: darkgray;
+
+@mixin flexCenter($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin image($repeat, $position, $cover) {
+  background-repeat: $repeat;
+  background-position: $position;
+  background-size: $cover;
+}
+
+.ranking {
+  width: 21%;
+  height: 1025px;
+  float: left;
+  box-shadow: 1px 1px 7px 0px rgb(100, 100, 100);
+  background-color: linen;
+  padding: 80px 15px 10px 15px;
+  position: relative;
+  border-radius: 5px;
+  .mustbuy-area {
+    width: 100%;
+    height: 1025px;
+    border-radius: 5px;
+    .mustbuy-title {
+      width: 90%;
+      height: 50px;
+      border-radius: 0 25px 25px 0;
+      background: linear-gradient(145deg, crimson 80%, firebrick 80%);
+      position: absolute;
+      top: 15px;
+      left: 0px;
+      z-index: 1;
+      box-shadow: 1px 1px 7px 0px rgb(100, 100, 100);
+      p {
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        letter-spacing: 10px;
+        line-height: 50px;
+        margin-left: 50px;
+      }
+    }
+    .mustbuy-item {
+      width: 100%;
+      height: 62px;
+      border-top: lightgray solid 1px;
+      border-bottom: lightgray solid 1px;
+      background-color: #fff;
+      margin-bottom: -1px;
+      .container-small {
+        width: 100% !important;
+        height: 63px !important;
+        padding: 5px !important;
+        margin-bottom: -1px;
+        opacity: 1 !important;
+        .outside {
+          height: 100%;
+          float: left;
+        }
+        .s-word {
+          width: 74%;
+          float: right;
+          text-align: center;
+        }
+        .s-word p {
+          line-height: 30px;
+        }
+        .s-word i {
+          float: right;
+          color: crimson;
+          font-weight: bold;
+        }
+      }
+      .container-big {
+        width: 100% !important;
+        height: 310px !important;
+        padding: 10px !important;
+        opacity: 1 !important;
+        .inside {
+          width: 100%;
+          margin: 0 auto;
+          max-width: 200px;
+        }
+        .b-word {
+          height: 30%;
+          text-align: center;
+          padding: 10px;
+        }
+        .b-word span {
+          float: right;
+          color: gray;
+          display: inline;
+        }
+        .b-word s {
+          color: gray;
+          font-size: 14px;
+          float: left;
+        }
+        .b-word i {
+          float: right;
+          color: crimson;
+          font-size: 20px;
+          font-weight: bold;
+        }
+      }
+      .dn {
+        display: none;
+      }
+      .db {
+        display: block;
+      }
+    }
+    .now-size {
+      height: 310px;
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+  .ranking {
+    display: none !important;
+  }
+}
